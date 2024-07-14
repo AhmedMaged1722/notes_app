@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/constans/color.dart';
 
 class CustomIcon extends StatelessWidget {
   const CustomIcon({super.key});
@@ -14,9 +15,10 @@ class CustomIcon extends StatelessWidget {
           width: 45,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
-            color: Colors.white.withOpacity(0.2),
+            color: const Color(0xFF8D493A).withOpacity(0.8),
           ),
           child: const Icon(
+            color: kBlack,
             Icons.search,
             size: 28,
           ),
