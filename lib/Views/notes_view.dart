@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/Views/widgets/notes_view_body.dart';
+import 'package:notes_app/constans/color.dart';
 
 class NotesView extends StatelessWidget {
   const NotesView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text('data'),
-      ),
-      body: const Center(child: Text('data')),
+    return const Scaffold(
+      body: NotesViewBody(),
     );
   }
 }
