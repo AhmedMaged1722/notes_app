@@ -7,14 +7,13 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding: EdgeInsets.all(16),
+      padding: EdgeInsets.only(bottom: 16),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             'Notes',
             style: TextStyle(
-              fontFamily: 'PFA',
               fontSize: 30,
             ),
           ),
