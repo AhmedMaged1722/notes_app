@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:notes_app/Views/widgets/custom_text_filed.dart';
-import 'package:notes_app/constans/color.dart';
+import 'package:notes_app/constans/const.dart';
 
 class AddNote extends StatelessWidget {
   const AddNote({super.key});
