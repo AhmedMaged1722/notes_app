@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/Views/widgets/custom_icon.dart';
+import 'package:notes_app/constans/color.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});
@@ -12,6 +13,7 @@ class CustomAppBar extends StatelessWidget {
         Text(
           'Notes',
           style: TextStyle(
+            color: kColor4,
             fontSize: 30,
           ),
         ),

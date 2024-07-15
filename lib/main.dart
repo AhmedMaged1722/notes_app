@@ -16,8 +16,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: 'PFA',
-        brightness: Brightness.dark,
-        scaffoldBackgroundColor: kBlack,
+        brightness: Brightness.light,
+        scaffoldBackgroundColor: kColor1,
       ),
       home: const NotesView(),
     );

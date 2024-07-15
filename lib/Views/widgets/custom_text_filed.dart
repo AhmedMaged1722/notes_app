@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/constans/color.dart';
 
+// ignore: must_be_immutable
 class CustomTextFiled extends StatelessWidget {
   CustomTextFiled({super.key, this.hintText, this.maxLines});
   String? hintText;
@@ -10,14 +11,14 @@ class CustomTextFiled extends StatelessWidget {
   Widget build(BuildContext context) {
     const outlineInputBorder = OutlineInputBorder(
       borderSide: BorderSide(
-        color: kBlack,
+        color: kColor4,
       ),
     );
     return TextField(
       maxLines: maxLines,
       cursorColor: kBlack,
       style: const TextStyle(
-        color: kBlack,
+        color: kColor4,
       ),
       keyboardType: TextInputType.text,
       keyboardAppearance: Brightness.dark,
@@ -27,7 +28,7 @@ class CustomTextFiled extends StatelessWidget {
         focusedBorder: outlineInputBorder,
         hintText: hintText,
         hintStyle: const TextStyle(
-          color: kBlack,
+          color: kColor4,
         ),
       ),
     );

@@ -24,7 +24,7 @@ class NotesView extends StatelessWidget {
                 });
           },
           tooltip: 'Add new item',
-          backgroundColor: const Color(0xFF8D493A),
+          backgroundColor: kColor4,
           foregroundColor: kBlack,
           child: const Icon(
             Icons.add,

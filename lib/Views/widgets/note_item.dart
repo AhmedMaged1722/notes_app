@@ -37,7 +37,7 @@ class NoteItem extends StatelessWidget {
               onPressed: () {},
               icon: const FaIcon(
                 FontAwesomeIcons.trash,
-                color: Color(0xFF8D493A),
+                color: kColor4,
                 size: 32,
               ),
             ),
