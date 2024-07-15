@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/constans/color.dart';
 
-// ignore: must_be_immutable
 class CustomTextFiled extends StatelessWidget {
-  CustomTextFiled({super.key, this.hintText, this.maxLines});
-  String? hintText;
-  int? maxLines;
+  const CustomTextFiled(
+      {super.key, required this.hintText, required this.maxLines});
+  final String hintText;
+  final int maxLines;
 
   @override
   Widget build(BuildContext context) {

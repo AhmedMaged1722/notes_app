@@ -17,11 +17,14 @@ class AddNote extends StatelessWidget {
             const SizedBox(
               height: 35,
             ),
-            CustomTextFiled(hintText: 'Title'),
+            const CustomTextFiled(
+              hintText: 'Title',
+              maxLines: 1,
+            ),
             const SizedBox(
               height: 50,
             ),
-            CustomTextFiled(
+            const CustomTextFiled(
               hintText: 'Content',
               maxLines: 5,
             ),
