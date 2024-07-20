@@ -10,7 +10,7 @@ class NotesView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: Padding(
-        padding: const EdgeInsets.only(right: 16, bottom: 42),
+        padding: const EdgeInsets.only(right: 8, bottom: 24),
         child: FloatingActionButton(
           onPressed: () {
             showModalBottomSheet(
