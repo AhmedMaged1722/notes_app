@@ -3,9 +3,13 @@ import 'package:notes_app/constans/const.dart';
 
 class CustomTextFiled extends StatelessWidget {
   const CustomTextFiled(
-      {super.key, required this.hintText, required this.maxLines});
+      {super.key,
+      required this.hintText,
+      required this.maxLines,
+      this.onSaved});
   final String hintText;
   final int maxLines;
+  final void Function(String?)? onSaved;
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +18,17 @@ class CustomTextFiled extends StatelessWidget {
         color: kColor4,
       ),
     );
-    return TextField(
+    return TextFormField(
+      onSaved: onSaved,
+      validator: (value) {
+        if (value?.isEmpty ?? true) {
+          return 'Field is required';
+        } else {
+          return null;
+        }
+      },
       maxLines: maxLines,
-      cursorColor: kBlack,
+      cursorColor: kColor4,
       style: const TextStyle(
         color: kColor4,
       ),
