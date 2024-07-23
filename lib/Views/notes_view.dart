@@ -20,7 +20,7 @@ class NotesView extends StatelessWidget {
                 ),
                 context: context,
                 builder: (context) {
-                  return const AddNote();
+                  return AddNote();
                 });
           },
           tooltip: 'Add new item',
