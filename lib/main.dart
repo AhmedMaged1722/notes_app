@@ -11,9 +11,9 @@ import 'package:notes_app/simble_bloc_observer.dart';
 
 void main() async {
   // ignore: await_only_futures
-  Bloc.observer = SimbleBlocObserver();
   await Hive.initFlutter();
-  await Hive.openBox(kNotesBox);
+  Bloc.observer = SimbleBlocObserver();
+  await Hive.openBox<NoteModel>(kNotesBox);
   Hive.registerAdapter(NoteModelAdapter());
   runApp(const MyApp());
 }

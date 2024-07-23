@@ -17,23 +17,23 @@ class _AddNoteState extends State<AddNote> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: SingleChildScrollView(
-        child: BlocConsumer<AddNoteCubit, AddNoteState>(
-          listener: (context, state) {
-            if (state is AddNoteSuccess) {
-              Navigator.pop(context);
-            }
-            if (state is AddNoteFailure) {
-              debugPrint('Fail ${state.errorMsg}');
-            }
-          },
-          builder: (context, state) {
-            return const ModalProgressHUD(
-              inAsyncCall: State is AddNoteLoading ? true : false,
+      child: BlocConsumer<AddNoteCubit, AddNoteState>(
+        listener: (context, state) {
+          if (state is AddNoteSuccess) {
+            Navigator.pop(context);
+          }
+          if (state is AddNoteFailure) {
+            debugPrint('Fail');
+          }
+        },
+        builder: (context, state) {
+          return const ModalProgressHUD(
+            inAsyncCall: State is AddNoteLoading ? true : false,
+            child: SingleChildScrollView(
               child: AddNoteFormState(),
-            );
-          },
-        ),
+            ),
+          );
+        },
       ),
     );
   }
