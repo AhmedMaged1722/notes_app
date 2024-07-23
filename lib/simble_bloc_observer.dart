@@ -9,6 +9,18 @@ class SimbleBlocObserver extends BlocObserver {
   }
 
   @override
+  void onClose(BlocBase bloc) {
+    super.onClose(bloc);
+    debugPrint('close = $bloc');
+  }
+
+  @override
+  void onCreate(BlocBase bloc) {
+    super.onCreate(bloc);
+    debugPrint('create = $bloc');
+  }
+
+  @override
   void onEvent(Bloc bloc, Object? event) {
     super.onEvent(bloc, event);
   }

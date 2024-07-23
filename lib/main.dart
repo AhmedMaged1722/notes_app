@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/adapters.dart';
@@ -13,8 +11,8 @@ void main() async {
   // ignore: await_only_futures
   await Hive.initFlutter();
   Bloc.observer = SimbleBlocObserver();
-  await Hive.openBox<NoteModel>(kNotesBox);
   Hive.registerAdapter(NoteModelAdapter());
+  await Hive.openBox<NoteModel>(kNotesBox);
   runApp(const MyApp());
 }
 
@@ -24,21 +22,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          create: (context) => AddNoteCubit(),
-        )
-      ],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          fontFamily: 'PFA',
-          brightness: Brightness.light,
-          scaffoldBackgroundColor: kColor1,
-        ),
-        home: const NotesView(),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        fontFamily: 'PFA',
+        brightness: Brightness.light,
+        scaffoldBackgroundColor: kColor1,
       ),
+      home: const NotesView(),
     );
   }
 }

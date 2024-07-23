@@ -15,25 +15,28 @@ class AddNote extends StatefulWidget {
 class _AddNoteState extends State<AddNote> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: BlocConsumer<AddNoteCubit, AddNoteState>(
-        listener: (context, state) {
-          if (state is AddNoteSuccess) {
-            Navigator.pop(context);
-          }
-          if (state is AddNoteFailure) {
-            debugPrint('Fail');
-          }
-        },
-        builder: (context, state) {
-          return const ModalProgressHUD(
-            inAsyncCall: State is AddNoteLoading ? true : false,
-            child: SingleChildScrollView(
-              child: AddNoteFormState(),
-            ),
-          );
-        },
+    return BlocProvider(
+      create: (context) => AddNoteCubit(),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: BlocConsumer<AddNoteCubit, AddNoteState>(
+          listener: (context, state) {
+            if (state is AddNoteSuccess) {
+              Navigator.pop(context);
+            }
+            if (state is AddNoteFailure) {
+              debugPrint('Fail');
+            }
+          },
+          builder: (context, state) {
+            return const ModalProgressHUD(
+              inAsyncCall: State is AddNoteLoading ? true : false,
+              child: SingleChildScrollView(
+                child: AddNoteFormState(),
+              ),
+            );
+          },
+        ),
       ),
     );
   }
