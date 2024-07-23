@@ -24,7 +24,7 @@ class _AddNoteState extends State<AddNote> {
               Navigator.pop(context);
             }
             if (state is AddNoteFailure) {
-              print('Fail ${state.errorMsg}');
+              debugPrint('Fail ${state.errorMsg}');
             }
           },
           builder: (context, state) {

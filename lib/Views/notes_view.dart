@@ -14,13 +14,13 @@ class NotesView extends StatelessWidget {
         child: FloatingActionButton(
           onPressed: () {
             showModalBottomSheet(
-                backgroundColor: const Color(0xFFD0B8A8),
+                backgroundColor: kColor2,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
                 context: context,
                 builder: (context) {
-                  return AddNote();
+                  return const AddNote();
                 });
           },
           tooltip: 'Add new item',
