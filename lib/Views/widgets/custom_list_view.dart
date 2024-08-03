@@ -17,13 +17,10 @@ class CustomListView extends StatelessWidget {
             padding: EdgeInsets.zero,
             physics: const ClampingScrollPhysics(),
             itemBuilder: (BuildContext context, int index) {
-              return Dismissible(
-                key: Key(notes.toString()),
-                child: Padding(
-                  padding: const EdgeInsets.only(bottom: 12),
-                  child: NoteItem(
-                    note: notes[index],
-                  ),
+              return Padding(
+                padding: const EdgeInsets.only(bottom: 12),
+                child: NoteItem(
+                  note: notes[index],
                 ),
               );
             },

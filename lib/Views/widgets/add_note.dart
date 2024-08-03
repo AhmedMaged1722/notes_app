@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:notes_app/Cubit/add_note_cubit/add_note_cubit.dart';
+import 'package:notes_app/Cubit/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/Views/widgets/add_note_form_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -21,6 +22,7 @@ class _AddNoteState extends State<AddNote> {
       child: BlocConsumer<AddNoteCubit, AddNoteState>(
         listener: (context, state) {
           if (state is AddNoteSuccess) {
+            BlocProvider.of<NotesCubit>(context).getNotes();
             Navigator.pop(context);
           }
           if (state is AddNoteFailure) {
