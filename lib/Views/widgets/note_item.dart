@@ -15,7 +15,9 @@ class NoteItem extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return const EditView();
+          return EditView(
+            note: note,
+          );
         }));
       },
       child: Container(
@@ -39,7 +41,7 @@ class NoteItem extends StatelessWidget {
                 child: Text(
                   note.subTitle,
                   style: TextStyle(
-                    color: Colors.black.withOpacity(0.5),
+                    color: kColor4.withOpacity(0.7),
                     fontSize: 18,
                   ),
                 ),
@@ -62,7 +64,7 @@ class NoteItem extends StatelessWidget {
               child: Text(
                 note.date,
                 style: TextStyle(
-                  color: Colors.black.withOpacity(0.5),
+                  color: kColor4.withOpacity(0.7),
                 ),
               ),
             )

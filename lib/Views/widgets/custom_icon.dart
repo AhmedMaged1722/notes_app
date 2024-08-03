@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:notes_app/constans/const.dart';
 
 class CustomIcon extends StatelessWidget {
-  const CustomIcon({super.key, required this.icon});
+  const CustomIcon({super.key, required this.icon, this.onTap});
   final IconData icon;
-
+  final Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return Tooltip(
       message: 'Search',
       child: GestureDetector(
-        onTap: () {},
+        onTap: onTap,
         child: Container(
           height: 45,
           width: 45,
