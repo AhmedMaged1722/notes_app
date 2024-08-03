@@ -44,7 +44,9 @@ class NoteItem extends StatelessWidget {
               ),
               trailing: IconButton(
                 tooltip: 'Delete',
-                onPressed: () {},
+                onPressed: () {
+                  note.delete();
+                },
                 icon: const FaIcon(
                   FontAwesomeIcons.trash,
                   color: kColor4,
